@@ -15,16 +15,18 @@
         <script type="text/javascript" src="js/canvas.js"></script>
     </head>
     <body>
+        <div class="mod-fixed">
+        </div>
         <div class="top">
             <div class="header">
                 <div class="logo">
                     <a href="#"><img src="images/logo.gif" alt="二维码生成器" width="125" height="38"></a>
                 </div>
                 <div class="nav" id="nav">
-                    <a href="" class="active frist"><span>二维码生成</span></a>
+                    <a href="#" class="active frist"><span>二维码生成</span></a>
                     <div class="subnav">
-                        <a href="">二维码生成</a>
-                        <a href="shiliang.html">矢量二维码</a>
+                        <a href="#">二维码生成</a>
+                        <a href="shiliang/index.html">矢量二维码</a>
                     </div>
                 </div>
             </div>
@@ -51,11 +53,6 @@
                                     <div class="tit"><span>即时输入即时生成!</span>输入文字</div>
                                     <textarea class="text" id="text_text" autocomplete="off">支持文本、网址和电子邮箱</textarea>
                                     <div class="size">已输入字数：<span id="text_size">0</span>/300</div>
-
-                                    <div class="notic" style="line-height:20px;padding-top:10px;">
-                                    </div>
-
-                                   
                                 </div>
 
                                 <!--名片-->
@@ -117,6 +114,7 @@
                                     <div class="urltype">
                                         <p><span>专用链接</span><input type="checkbox" id="urloptions"></p>
                                         <ul id="urlset">
+                                            
                                             <li class="sina"><input type="radio" name="url" rel="sina1" id="spersonal">个人<span><input type="radio" name="url" rel="sina2" id="sofficial">官微</span></li>
                                             <li class="taobao"><input type="radio" name="url" rel="item" id="titem">商品<span><input type="radio" name="url" rel="shop" id="tshop">店铺</span></li>
                                         </ul>
@@ -179,7 +177,6 @@
                                     </div>
                                 </div>
 
-                              
 
                             </div>
 
@@ -191,7 +188,7 @@
                     <div class="canvas-wrap">
                         <div class="canvas">
                             <canvas height="300" width="300" id="canvas">
-                                <a id="pic" target="_blank" href="/" shorturl="/" rel="nofollow"><img id="qrcodeimg" src="images/liantu.png"></a>
+                                <a id="pic" target="_blank" href="#" shorturl="#" rel="nofollow"><img id="qrcodeimg" src="images/liantu.png"></a>
                             </canvas>
                         </div>
                     </div>
@@ -278,7 +275,6 @@
                                             <form action="/upload.php" method="post" target="oniframe" id="logoform" enctype="multipart/form-data">
                                                 <input type="file" id="logoimg" class="addlogo" name="logo">
                                             </form>
-                                            <iframe name="oniframe" class="iframe" id="iframe" height="0" width="0" frameborder="0"></iframe>
                                         </div>
                                     </span>
                                     <div class="picelem" id="picelem"><span></span><a href="javascript:" class="del" title="删除" id="resetLogoimg"></a></div>
@@ -403,13 +399,31 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <br>
-		<br>
-		</div>
-
-        <div id="apiUrl" class="hide"></div>
+					<!--重要代码,不可删除-->
+        <script type="text/javascript">
+            <!--
+            defalutText($('#text_text'), '支持文本、网址和电子邮箱');
+            changeWifi();
+            tabfn($('#fntab li'), $('#fnbox .sub'));
+            fixtaba($('#fntab a'), $('#fntab li'));
+            tabfn($('#tabset .tabelem'), $('#fnblock .fnsubv'));
+            elemfocus($('#fnbox .dinput,#url_url,#text_text,#sms_sms'));
+            elemSwitch($('#addelem'), $('#litel'));
+            openmore($('#urloptions'), $('#urlset'));
+            //addpic($('#logoimg'), $('#picelem'), $('#turn'), $('#format'));
+            hideelem($('#hidetel'), $('#litel'), $('#addelem'), function() {
+                $('#card_phone').val('');
+            });
+            urlselect();
+            $(document).ready(function() {
+                resetAll();
+            })
+            //-->
+        </script>
+		
+        <div align="center"><br><br></div>
+        <div class="link">
         <div id="apiText" class="hide"></div>
         <div class="pin-panel" id="pin-panel">
             <span></span>
@@ -423,6 +437,13 @@
         <script type="text/javascript" src="other/api"></script>
         <script type="text/javascript" src="js/html5.js"></script>
         <script type="text/javascript" src="js/ie.js"></script>
+
+        <div class="footer">
 </div>
+<div class="hide">
+
+</div>
+   </div>
+   </div>
     </body>
 </html>
